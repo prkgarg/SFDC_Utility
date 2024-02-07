@@ -23,4 +23,13 @@ Questions :
     > Link 1 : https://salesforce.stackexchange.com/questions/258517/how-to-get-community-url-in-a-visualforce-email-template<br/>
     > Link 2 : https://salesforce.stackexchange.com/questions/367391/community-welcome-email-visualforce-is-not-sent<br/>
     > Link 3 : https://help.salesforce.com/s/articleView?id=sf.email_templates_vf_modify_for_guest.htm&type=5<br/>
-  
+
+<br/><br/><br/>
+
+  Q4. How do we read a Encrypted field value in apex class.<br/><br/>
+  Answer 4.     PageReference ref = new PageReference('/apex/mypage');<br/>
+                ref.getParameters().put('param', paymentMethod.Credit_Card_Number__c);<br/>
+                String decryptedFieldValue = ref.getParameters().get('param');<br/>
+                //or if you want to get value for example in getter method<br/>
+                //String decryptedFieldValue = ApexPages.currentPage().getParameters().get('param');<br/>
+          Now you can use "decryptedFieldValue" variable which contains the information. <br/>
